@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B003C5B1B381162003F90F1 /* CustomException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B003C591B381162003F90F1 /* CustomException.cpp */; };
 		1BABB5B41B37341700C3717C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BABB5B31B37341700C3717C /* main.cpp */; };
 		1BABB5BB1B3736C700C3717C /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BABB5BA1B3736C700C3717C /* boost.framework */; };
 		1BABB5BE1B37376800C3717C /* Finder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1BABB5BC1B37376800C3717C /* Finder.cpp */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B003C591B381162003F90F1 /* CustomException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomException.cpp; sourceTree = "<group>"; };
+		1B003C5A1B381162003F90F1 /* CustomException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomException.h; sourceTree = "<group>"; };
 		1BABB5B01B37341700C3717C /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BABB5B31B37341700C3717C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1BABB5BA1B3736C700C3717C /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = ../../Downloads/osx/framework/boost.framework; sourceTree = "<group>"; };
@@ -72,6 +75,8 @@
 				1BABB5BD1B37376800C3717C /* Finder.h */,
 				1BABB5BF1B37377D00C3717C /* FileReader.cpp */,
 				1BABB5C01B37377D00C3717C /* FileReader.h */,
+				1B003C591B381162003F90F1 /* CustomException.cpp */,
+				1B003C5A1B381162003F90F1 /* CustomException.h */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			files = (
 				1BABB5B41B37341700C3717C /* main.cpp in Sources */,
 				1BABB5C11B37377D00C3717C /* FileReader.cpp in Sources */,
+				1B003C5B1B381162003F90F1 /* CustomException.cpp in Sources */,
 				1BABB5BE1B37376800C3717C /* Finder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +265,7 @@
 				1BABB5B91B37341700C3717C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

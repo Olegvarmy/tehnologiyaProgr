@@ -4,6 +4,7 @@
 #include "Finder.h"
 #include <boost/filesystem.hpp>
 #include <map>
+#include "CustomException.h"
 
 bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, bool last) {
     if (!exists(dirPath)) {
@@ -27,8 +28,8 @@ bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, b
                     std::cout << "find string at position = " << position << " in file " << p.string() << std::endl;
                     return true;
                 }
-            } catch (std::exception e) {
-                std::cout << "can't create Finder instance" << std::endl;
+            } catch (CustomException e)
+                std::cout << e.what() << endl << "can't create Finder instance" << std::endl;
                 return false;
             }
         }
@@ -37,12 +38,19 @@ bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, b
 }
 
 int main() {
-    std::string textForFind;
-    std::cout << "Input substring for find" << std::endl;
-    cin >> textForFind;
-    boost::filesystem::path* path = new boost::filesystem::path("/Users/excelsior/OneDrive/books");
-    if(!findFile(*path, &textForFind, true)) {
-        std::cout << "Cannot find substring!";
+//    std::string textForFind;
+//    std::cout << "Input substring for find" << std::endl;
+//    cin >> textForFind;
+//    boost::filesystem::path* path = new boost::filesystem::path("/Users/excelsior/OneDrive/books");
+//    if(!findFile(*path, &textForFind, false)) {
+//        std::cout << "Cannot find substring!";
+//    }
+    
+    try {
+        CustomException exception;
+        throw exception;
+    } catch(CustomException e) {
+        std::cout << e.what() << endl;
     }
     
 //    std::string filePath;

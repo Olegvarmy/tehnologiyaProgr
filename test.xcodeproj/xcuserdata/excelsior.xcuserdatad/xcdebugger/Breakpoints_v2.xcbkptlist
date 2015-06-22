@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/main.cpp"
-            timestampString = "456641846.523154"
+            timestampString = "456660572.155101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "9"
-            endingLineNumber = "9"
-            landmarkName = "findFile(const boost::filesystem::path &amp;dirPath, std::string* textToFind)"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "findFile(const boost::filesystem::path &amp;dirPath, std::string* textToFind, bool last)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "test/main.cpp"
-            timestampString = "456641846.523154"
+            timestampString = "456660572.155101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "findFile(const boost::filesystem::path &amp;dirPath, std::string* textToFind)"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "findFile(const boost::filesystem::path &amp;dirPath, std::string* textToFind, bool last)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

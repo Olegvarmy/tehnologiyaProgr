@@ -12,6 +12,7 @@
 #include <sstream>
 #include <vector>
 #include "FileReader.h"
+#include "CustomException.h"
 
 FileReader::FileReader(std::string filename) {
     this->inStream = new std::ifstream;
@@ -32,8 +33,8 @@ FileReader::~FileReader() {
 std::string FileReader::readFileToString() {
     std::vector<std::string> vector;
     if(inStream == nullptr) {
-        std::cout << "Can't read from file!" << std::endl;
-        return "";
+        CustomException e;
+        throw e;
     }
     std::string line;
     while (std::getline(*inStream, line))

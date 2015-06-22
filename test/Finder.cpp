@@ -10,11 +10,13 @@
 #include <string>
 #include <iostream>
 #include "Finder.h"
+#include "CustomException.h"
 
 Finder::Finder(std::string* text, std::string* substringForFind) {
     if (text == nullptr || substringForFind == nullptr) {
         std::cout << "incorrect params!" << std::endl;
-        throw std::exception();
+        CustomException e;
+        throw e;
     }
     this->text = text;
     this->substringForFind = substringForFind;
