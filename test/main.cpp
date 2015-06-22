@@ -19,16 +19,16 @@ bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, b
         } else {
             std::cout << currEl->path().string() << " file" << std::endl;
             boost::filesystem::path p = currEl->path();
-            FileReader *fileReader = new FileReader(currEl->path().string());
-            std::string textFile = fileReader->readFileToString();
             try {
+                FileReader *fileReader = new FileReader(currEl->path().string());
+                std::string textFile = fileReader->readFileToString();
                 Finder* finder = new Finder(&textFile, textToFind);
                 unsigned long position = finder->find(last);
                 if (position) {
                     std::cout << "find string at position = " << position << " in file " << p.string() << std::endl;
                     return true;
                 }
-            } catch (CustomException e)
+            } catch (CustomException e) {
                 std::cout << e.what() << endl << "can't create Finder instance" << std::endl;
                 return false;
             }
@@ -38,20 +38,20 @@ bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, b
 }
 
 int main() {
-//    std::string textForFind;
-//    std::cout << "Input substring for find" << std::endl;
-//    cin >> textForFind;
-//    boost::filesystem::path* path = new boost::filesystem::path("/Users/excelsior/OneDrive/books");
-//    if(!findFile(*path, &textForFind, false)) {
-//        std::cout << "Cannot find substring!";
-//    }
-    
-    try {
-        CustomException exception;
-        throw exception;
-    } catch(CustomException e) {
-        std::cout << e.what() << endl;
+    std::string textForFind;
+    std::cout << "Input substring for find" << std::endl;
+    cin >> textForFind;
+    boost::filesystem::path* path = new boost::filesystem::path("/Users/excelsior/OneDrive/books");
+    if(!findFile(*path, &textForFind, false)) {
+        std::cout << "Cannot find substring!";
     }
+    
+//    try {
+//        CustomException exception;
+//        throw exception;
+//    } catch(CustomException e) {
+//        std::cout << e.what() << endl;
+//    }
     
 //    std::string filePath;
 //    std::cout << "input filename with full path" << endl;
