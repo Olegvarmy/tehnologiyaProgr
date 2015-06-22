@@ -8,7 +8,7 @@
 
 bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, bool last) {
     if (!exists(dirPath)) {
-        std::cout << "path does not exist!";
+        std::cout << "path = " << dirPath << " does not exist!";
         return false;
     }
     boost::filesystem::directory_iterator endElement;
@@ -25,7 +25,8 @@ bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, b
                 Finder* finder = new Finder(&textFile, textToFind);
                 unsigned long position = finder->find(last);
                 if (position) {
-                    std::cout << "find string at position = " << position << " in file " << p.string() << std::endl;
+                    std::cout << "text = \"" << *textToFind << "\" find at position = " << position << " in file "
+                    << p.string() << std::endl;
                     return true;
                 }
             } catch (CustomException e) {
@@ -40,11 +41,26 @@ bool findFile(const boost::filesystem::path &dirPath, std::string* textToFind, b
 int main() {
     std::string textForFind;
     std::cout << "Input substring for find" << std::endl;
-    cin >> textForFind;
-    boost::filesystem::path* path = new boost::filesystem::path("/Users/excelsior/OneDrive/books");
-    if(!findFile(*path, &textForFind, false)) {
-        std::cout << "Cannot find substring!";
+    std::getline(std::cin, textForFind);
+    std::vector<std::string> strings;
+    std::cout << "Input path to file, or input \"break\"" << endl;
+    std::string stringPath;
+    while(true) {
+        cin >> stringPath;
+        if (stringPath.compare("break") == 0) {
+            break;
+        } else {
+            strings.push_back(stringPath);
+        }
     }
+    for (int i = 0; i < strings.size(); i++) {
+        boost::filesystem::path* path = new boost::filesystem::path(strings.at(i));
+        if(!findFile(*path, &textForFind, false)) {
+            std::cout << "Cannot find substring!" << endl;
+        }
+
+    }
+    
     
 //    try {
 //        CustomException exception;
