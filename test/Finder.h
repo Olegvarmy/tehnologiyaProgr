@@ -19,6 +19,6 @@ class Finder {
     std::string* text;
 public:
     Finder(std::string* string, std::string* substringForFind);
-    unsigned long find();
+    unsigned long find(bool last);
 };
 #endif /* defined(__test__Finder__) */

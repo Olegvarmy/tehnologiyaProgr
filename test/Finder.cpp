@@ -21,8 +21,13 @@ Finder::Finder(std::string* text, std::string* substringForFind) {
     
 }
 
-unsigned long Finder::find() {
-    unsigned long position =  text->find(*substringForFind);
+unsigned long Finder::find(bool last) {
+    unsigned long position;
+    if (last) {
+        position = text->find_last_of(*substringForFind);
+    } else {
+        position = text->find_last_of(*substringForFind);
+    }
     if (position == std::string::npos) {
         return 0;
     }
